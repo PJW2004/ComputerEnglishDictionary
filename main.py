@@ -1,7 +1,7 @@
 # 실제 동작 program
-from API.starting import Word_test
-from API.starting import Start_Program
-from API.Input_Program import In_Terms
+from APIv.starting import Word_test
+from APIv.starting import Start_Program
+from APIv.Input_Program import In_Terms
 
 print("// ######################################## // "
       "\n        환영 합니다!    \n// "

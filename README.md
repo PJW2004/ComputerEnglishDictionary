@@ -2,6 +2,6 @@
 Computer English dictionary
 
 ### Version
-```
-Python: 3.8
+```commandline
+Python: v3.8
 ```

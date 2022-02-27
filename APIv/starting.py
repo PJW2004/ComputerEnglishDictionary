@@ -9,14 +9,14 @@ class Start_Program:
     }
 
     def __init__(self):
-        if not os.path.exists('API/data_list'):
-            with open('./API/data_list', 'w') as data:
+        if not os.path.exists('APIv/data_list'):
+            with open('./APIv/data_list', 'w') as data:
                 data.write("term:difinition,\n")
                 data.close()
 
     # 현재 데이터 체크
     def Check_the_word(self, check=0):
-        with open('./API/data_list', 'r') as data:
+        with open('./APIv/data_list', 'r') as data:
             for i in data:
                 try:
                     term = i.split(':')[0]
@@ -31,14 +31,14 @@ class Start_Program:
     # 데이터 삭제
     def delete_data(self, Ddata):
         self.text = """"""
-        with open('./API/data_list', 'r') as data:
+        with open('./APIv/data_list', 'r') as data:
             for i in data:
                 if i.split(':')[0] != Ddata:
                     term = i.split(':')[0]
                     difinition = i.split(':')[1][:-2]
                     self.text += f"{term}:{difinition},\n"
             data.close()
-        with open('./API/data_list', 'w') as data:
+        with open('./APIv/data_list', 'w') as data:
             data.write(self.text)
             data.close()
 
