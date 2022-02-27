@@ -22,7 +22,7 @@ class Start_Program:
                     term = i.split(':')[0]
                     difinition = i.split(':')[1][:-2]
                     print(f"{term} : {difinition}")
-                    self.data_list.update({f'{term}' : f'{difinition}'})
+                    self.data_list.update({f'{term}': f'{difinition}'})
 
                 except IndexError:
                     pass
@@ -53,7 +53,7 @@ class Word_test:
             for english in keys:
                 korean = Start_Program.data_list[english]
 
-                guess = input('{english} 영어 단어를 번역하세요: ')
+                guess = input(f'{english} 영어 단어를 번역하세요: ')
 
                 if guess == korean:
                     print('영어 단어의 번역이 맞습니다.\n')
