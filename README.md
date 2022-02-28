@@ -5,3 +5,8 @@ Computer English dictionary
 ```commandline
 Python: v3.8
 ```
+
+### db
+```commandline
+postgres
+```
