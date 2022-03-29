@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  db:
+    build: ./db/.
+    networks:
+      - external
+    container_name: CED_db
+    environment:
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
+      - POSTGRES_HOST_AUTH_METHOD=scram-sha-256
+    ports:
+      - 5432:5432
