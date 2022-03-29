@@ -14,6 +14,3 @@ Python: v3.8
 ```commandline
 postgres
 ```
-
-gitignore
-dotenv
