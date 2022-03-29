@@ -1,8 +1,0 @@
-db:
-  postgres:
-    1:
-      user: postgres
-      passwd: postgres
-      host: "localhost"
-      port: 5432
-      dbname: postgres
