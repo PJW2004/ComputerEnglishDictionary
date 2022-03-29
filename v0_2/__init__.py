@@ -1,10 +1,10 @@
 import os
 
 User_answers = {
-    '용어 입력': 'python ./API/in_word.py',
-    '용어 삭제': 'python ./API/delete_word.py',
-    '단어 학습': 'python ./API/learning_word.py',
-    '종료': 'python ./API/end.py'
+    '용어 입력': 'python ./APIv/in_word.py',
+    '용어 삭제': 'python ./APIv/delete_word.py',
+    '단어 학습': 'python ./APIv/learning_word.py',
+    '종료': 'python ./APIv/end.py'
 }
 
 try:
