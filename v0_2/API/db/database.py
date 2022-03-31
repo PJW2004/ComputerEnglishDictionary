@@ -12,4 +12,3 @@ url = f'postgresql://{DB_user}:{DB_passwd}@{DB_host}:{DB_port}/{DB_name}'
 engine = create_engine(url)
 Session = sessionmaker(bind=engine)
 Base = declarative_base
-
