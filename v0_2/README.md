@@ -12,5 +12,5 @@ Python: v3.8
 
 ### DB
 ```commandline
-postgres
+postgres: 14
 ```
