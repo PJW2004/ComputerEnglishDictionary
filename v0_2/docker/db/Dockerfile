@@ -9,3 +9,4 @@ ENV TZ: 'Asia/seoul'
 
 # port
 EXPOSE 5432
+
