@@ -3,3 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+DB_user = os.environ.get('DB_USER')
+DB_passwd = os.environ.get('DB_PASSWD')
+
+
