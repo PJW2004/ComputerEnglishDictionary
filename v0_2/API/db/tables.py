@@ -1,6 +1,8 @@
 from sqlalchemy import Table, Column, Integer, String
 from sqlalchemy import MetaData
 
+from database import Base
+
 '''
 create table list
 1. userdata
@@ -11,5 +13,6 @@ create table list
 meta = MetaData()
 
 userdata = Table(
-    'userdata',
+    'userdata', meta
+    
 )
