@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Integer, String
+from sqlalchemy import Table, Column, String, ForeignKey
 from sqlalchemy import MetaData
 
 from database import Base
@@ -16,8 +16,8 @@ userdata = Table(
     'userdata', meta,
     Column('word', String, primary_key=True),
     Column('meaning', String, unique=False),
-    # 외래 Key
-    Column('user', String, unique=False)
+    # foreign Key
+    Column('user', String, ForeignKey("user_list.user"), unique=False)
 )
 
 User_list = Table(
