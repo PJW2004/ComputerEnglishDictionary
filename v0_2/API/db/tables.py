@@ -23,5 +23,7 @@ userdata = Table(
 User_list = Table(
     'user_list', meta,
     Column('user', String, primary_key=True),
-    Column('passwd', String, primary_key=True)
+    Column('passwd', String, unique=False)
 )
+
+
