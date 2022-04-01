@@ -17,5 +17,6 @@ userdata = Table(
     Column('word', String, primary_key=True),
     Column('meaning', String, unique=False),
     # 외래 Key
-    Column('user', String, )
+    Column('user', String, unique=False)
 )
+
