@@ -13,6 +13,9 @@ create table list
 meta = MetaData()
 
 userdata = Table(
-    'userdata', meta
-    
+    'userdata', meta,
+    Column('word', String, primary_key=True),
+    Column('meaning', String, unique=False),
+    # 외래 Key
+    Column('user', String, )
 )
