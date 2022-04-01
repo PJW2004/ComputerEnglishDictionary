@@ -20,3 +20,7 @@ userdata = Table(
     Column('user', String, unique=False)
 )
 
+User_list = Table(
+    'user_list', meta,
+    
+)
