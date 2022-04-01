@@ -7,3 +7,9 @@ create table list
 2. user_list
 '''
 
+# metadata
+meta = MetaData()
+
+userdata = Table(
+    'userdata',
+)
