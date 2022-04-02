@@ -37,4 +37,5 @@ except ImportError:
     os.system('sudo ln -s /Library/PostgresSQL/9.4/lib/libpq.5.dylib /usr/lib')
     # postgres APP 사용 경우
     # os.system('sudo ln -s /Applications/Postgres.app/Contents/Versions/9.4/lib/libpq.5.dylib /usr/lib')
-
+finally:
+    conn.close()
