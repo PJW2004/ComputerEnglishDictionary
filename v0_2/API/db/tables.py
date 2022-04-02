@@ -3,8 +3,6 @@ import os
 from sqlalchemy import Table, Column, String, ForeignKey
 from sqlalchemy import MetaData
 
-from database import Base, engine, Session
-
 '''
 create table list
 1. userdata
@@ -30,12 +28,12 @@ User_list = Table(
 
 # Table create
 try:
+    from database import Base, engine, Session
+
     with engine.connect as conn:
         meta.create_all(conn, checkfirst=False)
 except ImportError:
-    os.system('sudo mv /usr/lib/libpq.5.dylib /usr/lib/libpq.5.dylib.old')
-    os.system('sudo ln -s /Library/PostgresSQL/9.4/lib/libpq.5.dylib /usr/lib')
+    os.system('pip3 uninstall psycopg2')
+    os.system('pip3 install psycopg2-binary')
     # postgres APP 사용 경우
     # os.system('sudo ln -s /Applications/Postgres.app/Contents/Versions/9.4/lib/libpq.5.dylib /usr/lib')
-finally:
-    conn.close()
