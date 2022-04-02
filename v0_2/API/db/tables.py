@@ -28,7 +28,7 @@ User_list = Table(
 
 # Table create
 try:
-    from database import Base, engine, Session
+    from database import engine
 
     with engine.connect as conn:
         meta.create_all(conn, checkfirst=False)
