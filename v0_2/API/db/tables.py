@@ -1,7 +1,7 @@
 from sqlalchemy import Table, Column, String, ForeignKey
 from sqlalchemy import MetaData
 
-from database import Base, engine
+from database import Base, engine, Session
 
 '''
 create table list
@@ -29,5 +29,5 @@ User_list = Table(
 # Table create
 with engine.connect as conn:
     meta.create_all(conn, checkfirst=False)
-    
+
 
