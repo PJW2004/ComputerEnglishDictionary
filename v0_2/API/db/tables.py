@@ -37,3 +37,5 @@ except ImportError:
     os.system('pip3 install psycopg2-binary')
     # postgres APP 사용 경우
     # os.system('sudo ln -s /Applications/Postgres.app/Contents/Versions/9.4/lib/libpq.5.dylib /usr/lib')
+finally:
+    print('create table')
