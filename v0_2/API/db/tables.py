@@ -26,5 +26,8 @@ User_list = Table(
     Column('passwd', String, unique=False)
 )
 
-
+# Table create
+with engine.connect as conn:
+    meta.create_all(conn, checkfirst=False)
+    
 
