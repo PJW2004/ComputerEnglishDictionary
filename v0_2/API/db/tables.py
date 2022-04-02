@@ -1,3 +1,5 @@
+import os
+
 from sqlalchemy import Table, Column, String, ForeignKey
 from sqlalchemy import MetaData
 
@@ -27,7 +29,12 @@ User_list = Table(
 )
 
 # Table create
-with engine.connect as conn:
-    meta.create_all(conn, checkfirst=False)
+try:
+    with engine.connect as conn:
+        meta.create_all(conn, checkfirst=False)
+except ImportError:
+    os.system('sudo mv /usr/lib/libpq.5.dylib /usr/lib/libpq.5.dylib.old')
 
+    # postgres APP 사용 경우
+    os.system('sudo ln -s /Applications/Postgres.app/Contents/Versions/9.4/lib/libpq.5.dylib /usr/lib')
 
