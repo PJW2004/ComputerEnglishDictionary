@@ -39,5 +39,3 @@ User_list = Table(
 # Table create
 with engine.connect as conn:
     meta.create_all(conn, checkfirst=False)
-
-
