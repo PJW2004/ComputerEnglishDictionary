@@ -3,6 +3,7 @@ import os
 from sqlalchemy import Table, Column, String, ForeignKey
 from sqlalchemy import MetaData
 
+# database engine setting
 try:
     from database import engine
 except ImportError:
