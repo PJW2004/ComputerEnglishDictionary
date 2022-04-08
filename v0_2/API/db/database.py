@@ -9,6 +9,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 url = f'postgresql://{DB_user}:{DB_passwd}@{DB_host}:{DB_port}/{DB_name}'
+print(url)
 engine = create_engine(url)
-Session = sessionmaker(bind=engine)
+SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base
