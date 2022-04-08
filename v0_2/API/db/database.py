@@ -5,18 +5,13 @@ from db_secret_data import DB_port
 from db_secret_data import DB_name
 print('env setting')
 
+# url = f'postgresql://{DB_user}:{DB_passwd}@{DB_host}:{DB_port}/{DB_name}'
 from sqlalchemy import create_engine
-print('create engine')
 from sqlalchemy.ext.declarative import declarative_base
-print('declarative_base')
 from sqlalchemy.orm import sessionmaker
-print('sessionmaker')
 
-url = f'postgresql://{DB_user}:{DB_passwd}@{DB_host}:{DB_port}/{DB_name}'
-print(url)
+url = f"postgresql://postgres:postgres@localhost:5432/postgres"
 engine = create_engine(url)
-print(engine)
 SessionLocal = sessionmaker(bind=engine)
-print(SessionLocal)
-Base = declarative_base
-print(Base)
+
+Base = declarative_base()
