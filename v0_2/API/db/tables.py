@@ -5,7 +5,7 @@ from sqlalchemy import MetaData
 
 # database engine setting
 try:
-    from database import engine
+    from .database import engine
 except ImportError:
     os.system('pip3 uninstall psycopg2')
     os.system('pip3 install psycopg2-binary')
