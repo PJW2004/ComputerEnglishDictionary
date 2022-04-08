@@ -1,3 +1,4 @@
 python-dotenv
-sqlalchemy
+sqlalchemy==1.4.31
 psycopg2-binary
+psycopg2
