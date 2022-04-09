@@ -1,29 +1,36 @@
-import os
+if __name__ == "__main__": # absolute path
+    if __package__ is None:
+        import sys
+        from os import path
+        print(path.dirname(path.dirname(path.abspath(__file__))))
+        sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+        from API.database import engine
+    else:
+        # database engine setting
+        try:
+            from API.database import engine
+        # except ImportError:
+        #     os.system('pip3 uninstall psycopg2')
+        #     os.system('pip3 install psycopg2-binary')
+        #     # postgres APP 사용 경우
+        #     # os.system('sudo ln -s /Applications/Postgres.app/Contents/Versions/9.4/lib/libpq.5.dylib /usr/lib')
+        finally:
+            print('module change')
 
-from sqlalchemy import Table, Column, String, ForeignKey
-from sqlalchemy import MetaData
+    from sqlalchemy import Table, Column, String, ForeignKey
+    from sqlalchemy import MetaData
 
-# database engine setting
-try:
-    from .database import engine
-# except ImportError:
-#     os.system('pip3 uninstall psycopg2')
-#     os.system('pip3 install psycopg2-binary')
-#     # postgres APP 사용 경우
-#     # os.system('sudo ln -s /Applications/Postgres.app/Contents/Versions/9.4/lib/libpq.5.dylib /usr/lib')
-finally:
-    print('module change')
 
-'''
-create table list
-1. userdata
-2. user_list
-'''
 
-# metadata
-meta = MetaData()
+    '''
+    create table list
+    1. userdata
+    2. user_list
+    '''
 
-if __name__ == "__main__":
+    # metadata
+    meta = MetaData()
+
     userdata = Table(
         'userdata', meta,
         Column('word', String, primary_key=True),
