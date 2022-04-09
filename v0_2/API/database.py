@@ -1,8 +1,8 @@
-from db_secret_data import DB_user
-from db_secret_data import DB_passwd
-from db_secret_data import DB_host
-from db_secret_data import DB_port
-from db_secret_data import DB_name
+from .db.db_secret_data import DB_user
+from .db.db_secret_data import DB_passwd
+from .db.db_secret_data import DB_host
+from .db.db_secret_data import DB_port
+from .db.db_secret_data import DB_name
 
 from sqlalchemy import create_engine
 
