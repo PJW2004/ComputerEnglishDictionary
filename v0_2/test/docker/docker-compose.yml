@@ -1,0 +1,16 @@
+version: "3.8"
+
+networks:
+  external:
+    driver: bridge
+
+services:
+  db:
+    container_name: TEST
+    build: ./db/.
+    image: test:v0.1
+    networks:
+      - external
+
+    ports:
+      - 5432:5432
