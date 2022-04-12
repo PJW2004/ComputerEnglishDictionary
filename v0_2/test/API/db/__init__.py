@@ -8,5 +8,7 @@ if __name__ == "__main__":
 
     testtable = Table(
         'testtable', meta,
-        Column()
+        Column('test', String, primary_key=True)
     )
+
+    conn = engine.connect()
