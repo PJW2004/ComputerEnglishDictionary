@@ -18,33 +18,11 @@ if __name__ == "__main__": # absolute path
     #         print('module change')
     from API.db.database import engine
 
-    from sqlalchemy import Table, Column, String, ForeignKey
-    from sqlalchemy import MetaData
-
-
-
     '''
     create table list
     1. userdata
     2. user_list
     '''
-
-    # metadata
-    meta = MetaData()
-
-    userdata = Table(
-        'userdata', meta,
-        Column('word', String, primary_key=True),
-        Column('meaning', String, unique=False),
-        # foreign Key
-        Column('user', String, ForeignKey("user_list.user"), unique=False)
-    )
-
-    User_list = Table(
-        'user_list', meta,
-        Column('user', String, primary_key=True),
-        Column('passwd', String, unique=False)
-    )
 
     # Table create 아니 포트를 바꾸어도 이렇게 안되네 씁
     conn = engine.connect()
