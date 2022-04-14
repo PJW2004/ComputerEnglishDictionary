@@ -11,4 +11,5 @@ if __name__ == "__main__":
         Column('test', String, primary_key=True)
     )
 
-    conn = engine.connect()
+    with engine.connect as conn:
+       meta.create_all(conn, checkfirst=False)
