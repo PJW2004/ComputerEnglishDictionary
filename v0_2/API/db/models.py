@@ -1,6 +1,12 @@
 from .database import Base
 from sqlalchemy import Column, String, ForeignKey
 
+'''
+create table list
+1. userdata
+2. user_list
+'''
+
 
 class userdata(Base):
     __tablename__ = 'userdata'
