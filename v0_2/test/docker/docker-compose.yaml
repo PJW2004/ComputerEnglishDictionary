@@ -6,8 +6,9 @@ networks:
 
 services:
   db:
-    container_name: testserver
     build: ./db/.
+    container_name: testserver
+    image: test
     networks:
       - external
 
