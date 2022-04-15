@@ -15,4 +15,4 @@ print(url)
 engine = create_engine(url)
 SessionLocal = sessionmaker(engine)
 
-Base = declarative_base
+Base = declarative_base()
