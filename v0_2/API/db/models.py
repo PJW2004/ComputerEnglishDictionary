@@ -16,6 +16,7 @@ class userdata(Base):
     # foreign Key
     user = Column('user', String, ForeignKey("user_list.user"), unique=False)
 
+
 class userlist(Base):
     __tablename__ = 'userlist'
 
