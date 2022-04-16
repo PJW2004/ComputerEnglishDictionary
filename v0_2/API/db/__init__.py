@@ -6,4 +6,3 @@ if __name__ == "__main__": # absolute path
     # => 연결이 안된이유 : aws서버에서 inbound port를 안열어줌 ㅇㅇ
     conn = engine.connect()
 
-
