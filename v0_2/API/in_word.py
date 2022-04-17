@@ -1,3 +1,5 @@
+import sqlalchemy.exc
+
 from API.db.database import engine
 
 from translate import get_translate
@@ -13,8 +15,11 @@ conn = engine.connect()
 def in_word(data_=None):
     insert = f"INSERT INTO userdata VALUES('{data_['단어']}', '{data_['해석']}')"
 
-    conn.execute(insert)
-    print('[정상적으로 입력되었습니다.]')
+    try:
+        conn.execute(insert)
+        print('[정상적으로 입력되었습니다.]')
+    except sqlalchemy.exc.IntegrityError:
+        print('[이미 존재하는 단어 입니다.]')
 
 
 if YN == 'N':
@@ -22,7 +27,12 @@ if YN == 'N':
     print(data)
     in_word(data_=data)
 
+    print(conn.execute('select * from userdata'))
+
 
 else:
     print(data)
     in_word(data_=data)
+
+    for i in conn.execute('select * from userdata'):
+        print(i)
