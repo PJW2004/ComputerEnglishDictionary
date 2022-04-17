@@ -23,6 +23,11 @@ def create_user():
 
     conn.execute(insert)
 
+ins = "select users_ from userlist"
+
+result = conn.execute(ins)
+for i in result:
+    print(i)
 
 user = user_login()
 if user == '회원가입':
@@ -35,9 +40,6 @@ if user == '회원가입':
         print('[이미 존재하는 계정 이름입니다.]\n')
         create_user()
 
-else:
-    ins = "select users_ from userlist"
 
-    result = conn.execute(ins)
-    for i in result:
-        print(i)
+
+
