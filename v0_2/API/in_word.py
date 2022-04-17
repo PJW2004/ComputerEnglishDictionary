@@ -5,10 +5,6 @@ from API.db.database import engine
 from translate import get_translate
 
 
-user = input('[입력할 용어를 적어 주세요]\n[한 👉 영] : ')
-data = {"단어": user,
-        "해석": get_translate(user)}
-YN = input(f'\n[data가 최종적으로 {data} 처럼 저장이 됩니다.]\n[변경하지 않겠습니까? (Y/N)] : ')
 conn = engine.connect()
 
 
@@ -21,6 +17,12 @@ def in_word(data_=None):
     except sqlalchemy.exc.IntegrityError:
         print('[이미 존재하는 단어 입니다.]')
         user_ = input('[다른 단어로 입력하시겠습니까?][Y/N]')
+
+        
+user = input('[입력할 용어를 적어 주세요]\n[한 👉 영] : ')
+data = {"단어": user,
+        "해석": get_translate(user)}
+YN = input(f'\n[data가 최종적으로 {data} 처럼 저장이 됩니다.]\n[변경하지 않겠습니까? (Y/N)] : ')
 
 
 if YN == 'N':
