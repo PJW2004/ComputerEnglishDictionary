@@ -15,12 +15,18 @@ def user_answers():
 >> ''')])
 
 
-try:
-    user_answers()
+os.system('Python ./API/user.py')
 
-except KeyError:
-    print('입력이 잘못 되었습니다.')
-    user_answers()
+from API.user import TF
+print(TF)
 
-finally:
-    print('\n프로그램을 종료합니다.')
+if TF == True:
+    try:
+        user_answers()
+
+    except KeyError:
+        print('입력이 잘못 되었습니다.')
+        user_answers()
+
+    finally:
+        print('\n프로그램을 종료합니다.')
