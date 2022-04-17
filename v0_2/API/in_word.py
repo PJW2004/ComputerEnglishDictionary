@@ -42,3 +42,6 @@ def running():
 
         for i in conn.execute('select * from userdata'):
             print(i)
+
+
+running()
