@@ -16,4 +16,4 @@ def get_translate(text):
     response = requests.post(url, headers=header, data=data)
     send_data = response.json()
     trans_data = (send_data['message']['result']['translatedText'])
-    
+    return trans_data
