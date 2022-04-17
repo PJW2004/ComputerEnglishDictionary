@@ -7,5 +7,7 @@ YN = input(f'\n[data가 최종적으로 {data} 처럼 저장이 됩니다.]\n[�
 if YN == 'N':
     data = {user: input('[변경될 영어 번역을 입력해 주세요] : ')}
     print(data)
+    
+
 else:
     print(data)
