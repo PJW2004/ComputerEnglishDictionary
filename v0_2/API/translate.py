@@ -6,4 +6,8 @@ def get_translate(text):
     data = {'text': text,
             'source': 'ko',
             'target': 'en'}
-        
+
+
+    header = {
+        ''
+    }
