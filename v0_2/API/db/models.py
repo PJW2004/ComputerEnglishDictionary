@@ -20,5 +20,5 @@ class userdata(Base):
 class userlist(Base):
     __tablename__ = 'userlist'
 
-    user = Column('user', String, primary_key=True)
+    users_ = Column('users_', String, primary_key=True)
     passwd = Column('passwd', String, unique=False)
