@@ -24,26 +24,37 @@ def create_user():
     conn.execute(insert)
 
 
-def running(user_=""):
+def running_cre_u():
+    try:
+        create_user()
+
+        print("[정상적으로 만들어 졌습니다.]\n")
+
+    except sqlalchemy.exc.IntegrityError:
+        print('[이미 존재하는 계정 이름입니다.]\n')
+        create_user()
+
+        
+def running(user_="", user_li=None):
     if user_ == '회원가입':
-        try:
-            create_user()
 
-            print("[정상적으로 만들어 졌습니다.]\n")
-
-        except sqlalchemy.exc.IntegrityError:
-            print('[이미 존재하는 계정 이름입니다.]\n')
-            create_user()
+    elif user_ in user_li:
+        print(user_)
+    else:
+        YN = input('[계정이 존재 하지 않습니다. 계정을 만드시겠습니까?][Y/N] : ')
 
 
 ins = "select users_ from userlist"
 
 result = conn.execute(ins)
+user_li = []
 for i in result:
-    print(i)
+    user_li.append(i[0])
+
+print(user_li)
 
 user = user_login()
 
-running(user_=user)
+running(user_=user, user_li=user_li)
 
 
