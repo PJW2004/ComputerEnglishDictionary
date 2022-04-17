@@ -15,10 +15,7 @@ def user_answers():
 >> ''')])
 
 
-os.system('Python ./API/user.py')
-
 from API.user import TF
-print(TF)
 
 if TF == True:
     try:
