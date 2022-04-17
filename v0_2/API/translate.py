@@ -7,7 +7,7 @@ def get_translate(text):
             'source': 'ko',
             'target': 'en'}
 
-
     header = {
-        ''
-    }
+        "X-Naver-Client-Id": client_id,
+        "X-Naver-Client-Secret": client_secret
+            }
