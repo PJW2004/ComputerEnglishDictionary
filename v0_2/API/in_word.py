@@ -1,4 +1,4 @@
-from .db.database import engine
+from API.db.database import engine
 
 from translate import get_translate
 
