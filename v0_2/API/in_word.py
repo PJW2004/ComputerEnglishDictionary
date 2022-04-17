@@ -9,6 +9,10 @@ YN = input(f'\n[data가 최종적으로 {data} 처럼 저장이 됩니다.]\n[�
 conn = engine.connect()
 
 
+def in_word(data_=""):
+    insert = f"INSERT INTO userdata VALUES('{data_[0]}', '{data_[0]}')"
+
+
 if YN == 'N':
     data = {user: input('[변경될 영어 번역을 입력해 주세요] : ')}
     print(data)
