@@ -16,9 +16,9 @@ def in_word(data_=None):
         print('[정상적으로 입력되었습니다.]')
     except sqlalchemy.exc.IntegrityError:
         print('[이미 존재하는 단어 입니다.]')
-        user_ = input('[다른 단어로 입력하시겠습니까?][Y/N]')
+        user_ = input('[다른 단어로 입력하시겠습니까?][Y/N] : ')
         if user_ == 'Y':
-
+            
 
 
 def running():
