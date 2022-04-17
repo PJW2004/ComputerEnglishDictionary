@@ -13,8 +13,8 @@ class userdata(Base):
 
     word = Column('word', String, primary_key=True)
     meaning = Column('meaning', String, unique=False)
-    # foreign Key
-    user = Column('user', String, ForeignKey("user_list.user"), unique=False)
+    # foreign Key 보류
+    # user = Column('user', String, ForeignKey("user_list.user"), unique=False)
 
 
 class userlist(Base):
