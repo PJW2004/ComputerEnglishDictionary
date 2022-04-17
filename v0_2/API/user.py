@@ -7,10 +7,13 @@ from API.db import models
 Base.metadata.create_all(engine)
 
 print('[로그인을 먼저 해주셔야 프로그램이 시작됩니다.] : 계정이 없다면 "회원가입"을 입력해주세요')
-
-def
-user = input('user : ')
 conn = engine.connect()
+
+
+def user_login():
+    print('[로그인]')
+    user = input('user : ')
+    return user
 
 
 def create_user():
@@ -21,12 +24,12 @@ def create_user():
     conn.execute(insert)
 
 
+user = user_login()
 if user == '회원가입':
     try:
         create_user()
 
         print("[정상적으로 만들어 졌습니다.]\n")
-
 
     except sqlalchemy.exc.IntegrityError:
         print('[이미 존재하는 계정 이름입니다.]\n')
