@@ -1,3 +1,5 @@
+import os
+
 import sqlalchemy.exc
 
 from API.db.database import engine
@@ -23,7 +25,6 @@ def in_word(data_=None):
         else:
             print('프로그램을 종료합니다.\n')
 
-# test
 
 def running():
     user = input('\n[입력할 용어를 적어 주세요]\n[한 👉 영] : ')
@@ -45,4 +46,7 @@ def running():
             print(i)
 
 
-running()
+try:
+    running()
+finally:
+    os.system('python __init__.py')
