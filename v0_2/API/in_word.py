@@ -23,6 +23,7 @@ def in_word(data_=None):
         else:
             print('프로그램을 종료합니다.\n')
 
+# test
 
 def running():
     user = input('\n[입력할 용어를 적어 주세요]\n[한 👉 영] : ')
