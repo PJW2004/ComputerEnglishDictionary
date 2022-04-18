@@ -1,8 +1,6 @@
 from .db.database import engine
 
-
-print('delete')
-# delete to word
+conn = engine.coonnect()
 
 
 class Delete:
