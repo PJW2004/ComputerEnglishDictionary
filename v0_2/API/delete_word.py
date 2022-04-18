@@ -5,7 +5,6 @@ from API.db.database import engine
 try:
     conn = engine.connect()
 
-
     user = input('[삭제할 대상을 입력해 주세요][user/word] : ')
     if user == 'user':
         ins = "select * from userlist"
