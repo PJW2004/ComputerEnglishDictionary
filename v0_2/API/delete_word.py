@@ -47,5 +47,8 @@ elif user == 'word':
 
             conn.execute(delete)
             print('삭제가 완료 되었습니다.')
+        else:
+            print('삭제를 종료합니다.')
 
-    
+    except ValueError:
+        print('존재하지 않는 단어 입니다.')
