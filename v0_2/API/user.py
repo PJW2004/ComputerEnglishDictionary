@@ -68,6 +68,7 @@ def user_pass_li():
     return user_li, passwd_li
 
 
+user_li, passwd_li = user_pass_li()
 
 print(user_li)
 
