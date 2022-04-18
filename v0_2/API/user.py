@@ -65,7 +65,7 @@ for i in result:
     user_li.append(i[0])
     passwd_li.append(i[1])
 
-print(user_li, passwd_li)
+print(user_li)
 
 user = user_login()
 TF = running(user_=user, user_li=user_li)
