@@ -56,14 +56,18 @@ def running(user_="", user_li=None):
             return False
 
 
-ins = "select * from userlist"
+def user_pass_li():
+    ins = "select * from userlist"
 
-result = conn.execute(ins)
-user_li = []
-passwd_li = []
-for i in result:
-    user_li.append(i[0])
-    passwd_li.append(i[1])
+    result = conn.execute(ins)
+    user_li = []
+    passwd_li = []
+    for i in result:
+        user_li.append(i[0])
+        passwd_li.append(i[1])
+    return user_li, passwd_li
+
+
 
 print(user_li)
 
