@@ -30,10 +30,11 @@ for ran in range(10):
     if meaning[-1] == '.':
         meaning = meaning[:-1]
     if rl == 0:
-        user = input(f'[현재 제시된 {word}의 영단어는?] : ')
-        if user == meaning:
-            print('정답입니다!')
+        user = input(f'\033[93m[현재 제시된 "{word}"의 영단어는?] : ')
+        if user == meaning.lower():
+            print('\033[93m정답입니다!')
         else:
-            print('땡! 틀렸습니다.')
+            print('\033[93m땡! 틀렸습니다.'
+                  f'정답은 : "{meaning.lower()}"입니다.')
 
     print(word, meaning.lower())
