@@ -23,11 +23,15 @@ for r in requests:
     word_li.append(r[0])
     meaning_li.append(r[1])
 
+
+
 for ran in range(10):
     rl = random.randint(0, 1)
     word = random.choice(word_li)
     meaning = meaning_li[word_li.index(word)]
     if meaning[-1] == '.':
+        if word[-1] == '.':
+            word = word[:-1]
         meaning = meaning[:-1]
     if rl == 0:
         user = input(f'\033[93m[현재 제시된 "{word}"의 영단어는?] : ')
@@ -36,5 +40,10 @@ for ran in range(10):
         else:
             print('\033[93m땡! 틀렸습니다.'
                   f'정답은 : "{meaning.lower()}"입니다.')
-
-    print(word, meaning.lower())
+    elif rl == 1:
+        user = input(f'\033[93m[현재 제시된 "{meaning.lower()}"의 정의는?] : ')
+        if user == word:
+            print('\033[93m정답입니다!')
+        else:
+            print('\033[93m땡! 틀렸습니다.'
+                  f'정답은 : "{word}"입니다.')
