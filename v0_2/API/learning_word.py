@@ -11,17 +11,21 @@ text = '''\033[92m
 
 print(text)
 
-conn = engine.connect()
 
-select_ = "select * from userdata"
+def requests_(select_=None):
+    conn = engine.connect()
 
-requests = conn.execute(select_)
+    requests = conn.execute(select_)
 
-word_li, meaning_li = [], []
+    li_1, li_2 = [], []
 
-for r in requests:
-    word_li.append(r[0])
-    meaning_li.append(r[1])
+    for r in requests:
+        li_1.append(r[0])
+        li_2.append(r[1])
+    return li_1, li_2
+
+
+word_li, meaning_li = requests_(select_="select * from userdata")
 
 correct = 0
 
@@ -50,3 +54,7 @@ for ran in range(10):
             print('\033[93m땡! 틀렸습니다.'
                   f'정답은 : "{word}"입니다.')
 
+print(f'''\33
+    [92m최종적으로 사용자 님의
+    정답률은 : {(correct//10)*100}%이며,
+    10개의 문제중 {correct}만큼 맞추셨습니다.''')
