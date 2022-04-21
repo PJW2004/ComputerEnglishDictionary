@@ -28,6 +28,7 @@ def requests_(select_=None):
 word_li, meaning_li = requests_(select_="select * from userdata")
 
 correct = 0
+failure = []
 
 for ran in range(10):
     rl = random.randint(0, 1)
@@ -45,6 +46,8 @@ for ran in range(10):
         else:
             print('\033[94m\n땡! 틀렸습니다.'
                   f'정답은 : "{meaning.lower()}"입니다.')
+            failure.append(meaning.lower())
+
     elif rl == 1:
         user = input(f'\033[93m[현재 제시된 "{meaning.lower()}"의 정의는?] : ')
         if user == word:
@@ -53,6 +56,7 @@ for ran in range(10):
         else:
             print('\033[94m\n땡! 틀렸습니다.'
                   f'정답은 : "{word}"입니다.')
+            failure.append(meaning.lower())
 
 print(f'''\33[92m
     최종적으로 사용자 님의
