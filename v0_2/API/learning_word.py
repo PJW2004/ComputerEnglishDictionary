@@ -15,12 +15,17 @@ conn = engine.connect()
 
 select_ = "select * from userdata"
 
-word = conn.execute(select_)
+requests = conn.execute(select_)
 
 word_li, meaning_li = [], []
 
-for i in word:
-    word_li.append(i[0])
-    meaning_li.append(i[1])
+for r in requests:
+    word_li.append(r[0])
+    meaning_li.append(r[1])
 
+print(word_li, meaning_li)
 
+for ran in range(10):
+    word = random.choice(word_li)
+    meaning = meaning_li[word_li.index(word)]
+    print(word, meaning)
