@@ -13,4 +13,6 @@ print(text)
 
 conn = engine.connect()
 
+select_ = "select * from userdata"
 
+word = conn.execute(select_)
