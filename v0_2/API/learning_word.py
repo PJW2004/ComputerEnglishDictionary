@@ -40,21 +40,21 @@ for ran in range(10):
     if rl == 0:
         user = input(f'\033[93m[현재 제시된 "{word}"의 영단어는?] : ')
         if user == meaning.lower():
-            print('\033[93m정답입니다!')
+            print('\033[92m\n정답입니다!')
             correct += 1
         else:
-            print('\033[93m땡! 틀렸습니다.'
+            print('\033[94m\n땡! 틀렸습니다.'
                   f'정답은 : "{meaning.lower()}"입니다.')
     elif rl == 1:
         user = input(f'\033[93m[현재 제시된 "{meaning.lower()}"의 정의는?] : ')
         if user == word:
-            print('\033[93m정답입니다!')
+            print('\033[92m\n정답입니다!')
             correct += 1
         else:
-            print('\033[93m땡! 틀렸습니다.'
+            print('\033[94m\n땡! 틀렸습니다.'
                   f'정답은 : "{word}"입니다.')
 
-print(f'''\33
-    [92m최종적으로 사용자 님의
-    정답률은 : {(correct//10)*100}%이며,
+print(f'''\33[92m
+    최종적으로 사용자 님의
+    정답률은 : {correct*10}%이며,
     10개의 문제중 {correct}만큼 맞추셨습니다.''')
