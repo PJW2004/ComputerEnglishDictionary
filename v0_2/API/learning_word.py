@@ -16,3 +16,11 @@ conn = engine.connect()
 select_ = "select * from userdata"
 
 word = conn.execute(select_)
+
+word_li, meaning_li = [], []
+
+for i in word:
+    word_li.append(i[0])
+    meaning_li.append(i[1])
+
+
