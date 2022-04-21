@@ -23,9 +23,17 @@ for r in requests:
     word_li.append(r[0])
     meaning_li.append(r[1])
 
-print(word_li, meaning_li)
-
 for ran in range(10):
+    rl = random.randint(0, 1)
     word = random.choice(word_li)
     meaning = meaning_li[word_li.index(word)]
-    print(word, meaning)
+    if meaning[-1] == '.':
+        meaning = meaning[:-1]
+    if rl == 0:
+        user = input(f'[현재 제시된 {word}의 영단어는?] : ')
+        if user == meaning:
+            print('정답입니다!')
+        else:
+            print('땡! 틀렸습니다.')
+
+    print(word, meaning.lower())
