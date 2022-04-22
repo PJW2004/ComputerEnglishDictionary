@@ -6,7 +6,7 @@ from API.db import models
 
 Base.metadata.create_all(engine)
 
-print('[로그인을 먼저 해주셔야 프로그램이 시작됩니다.] : 계정이 없다면 "회원가입"을 입력해주세요')
+print('\33[87m[로그인을 먼저 해주셔야 프로그램이 시작됩니다.] : 계정이 없다면 "회원가입"을 입력해주세요')
 conn = engine.connect()
 
 
