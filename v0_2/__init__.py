@@ -9,7 +9,7 @@ User_answers = {
 
 
 def user_answers():
-    os.system(User_answers[input('''
+    os.system(User_answers[input('''\33[87m
     [용어 입력, 용어 삭제, 단어 학습, 종료]
 👉 위에 있는 데로 똑같이 작성을 해 주셔야 합니다. 👈
 >> ''')])
