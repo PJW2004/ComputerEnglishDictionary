@@ -64,4 +64,4 @@ print(f'''\33[92m
     정답률은 : {correct*10}%이며,
     10개의 문제중 {correct}만큼 맞추셨습니다.''')
 
-os.system('python _init_.py')
+os.system('python __init__.py')
