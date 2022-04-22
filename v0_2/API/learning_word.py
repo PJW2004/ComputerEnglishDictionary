@@ -1,3 +1,4 @@
+import os
 import random
 
 from API.db.database import engine
@@ -33,32 +34,34 @@ failure = []
 for ran in range(10):
     rl = random.randint(0, 1)
     word = random.choice(word_li)
-    meaning = meaning_li[word_li.index(word)]
+    meaning = meaning_li[word_li.index(word)].lower()
     if meaning[-1] == '.':
         if word[-1] == '.':
             word = word[:-1]
         meaning = meaning[:-1]
     if rl == 0:
         user = input(f'\033[93m[현재 제시된 "{word}"의 영단어는?] : ')
-        if user == meaning.lower():
+        if user == meaning:
             print('\033[92m\n정답입니다!')
             correct += 1
         else:
             print('\033[94m\n땡! 틀렸습니다.'
-                  f'정답은 : "{meaning.lower()}"입니다.')
-            failure.append(meaning.lower())
+                  f'정답은 : "{meaning}"입니다.')
+            failure.append(meaning)
 
     elif rl == 1:
-        user = input(f'\033[93m[현재 제시된 "{meaning.lower()}"의 정의는?] : ')
+        user = input(f'\033[93m[현재 제시된 "{meaning}"의 정의는?] : ')
         if user == word:
             print('\033[92m\n정답입니다!')
             correct += 1
         else:
             print('\033[94m\n땡! 틀렸습니다.'
                   f'정답은 : "{word}"입니다.')
-            failure.append(meaning.lower())
+            failure.append(meaning)
 
 print(f'''\33[92m
     최종적으로 사용자 님의
     정답률은 : {correct*10}%이며,
     10개의 문제중 {correct}만큼 맞추셨습니다.''')
+
+os.system('python _init_.py')
