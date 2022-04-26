@@ -65,3 +65,4 @@ print(f'''\33[92m
     10개의 문제중 {correct}만큼 맞추셨습니다.''')
 
 os.system('python __init__.py')
+
