@@ -9,14 +9,10 @@ I am trying to convert it to a method that utilizes DB rather than the text meth
 - 한국어 -> 영어
 
 ### Version
-```commandline
-Python: v3.8
-```
+> Python: v3.8
 
 ### DB
-```commandline
-postgres: 14
-```
+> postgres: 14
 
 # 추가 수정 내용
 - 로그인 실패시  "로그인을 다시 로그인 하시겠습니까?" 라는 질문 만들고 예일시 다시 로그인할수있는 기능
