@@ -1,20 +1,27 @@
-# 📚 CED_Project
+# Project Description
+### 📚 CED_Project
 ❍ Computer English dictionary
 
-This program is a program that helps users to learn the words they want by saving them.
+### Explanation
+이 프로그램은 사용자가 원하는 단어를 저장하여 학습할 수 있도록 도와주는 프로그램입니다.
+이전 버전에서 사용하던 텍스트 방식이 아닌 DB를 활용한 방식으로 변환하려고 합니다.
 
-I am trying to convert it to a method that utilizes DB rather than the text method used in the previous version.
+### Motive
+중간고사 공부를 하다가 영단어 학습을 도와주는 프로그램이 있으면 도움이 될것 같아 만들게 되었습니다.
+원하는 방식은 기본적으로 영단어를 입력하였을때 자동으로 번역한 후 입력이 가능한 것입니다.
 
-현재 지원 언어
+
+### 현재 지원 언어
 - 한국어 -> 영어
 
-### Version
+#### Version
 > Python: v3.8
 
-### DB
+#### DB
 > postgres: 14
 
-# 추가 수정 내용
+
+## 추가 수정 내용
 - 로그인 실패시  "로그인을 다시 로그인 하시겠습니까?" 라는 질문 만들고 예일시 다시 로그인할수있는 기능
 - 게스트 계정 추가
 - 타임 걸고 시간안에 못하면 시간초과 입니다.
