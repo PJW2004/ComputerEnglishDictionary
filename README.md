@@ -17,7 +17,6 @@
 #### Version
 > Python: v3.8
 
-#### DB
 > postgres: 14
 
 
